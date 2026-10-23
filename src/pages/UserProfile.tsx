@@ -26,13 +26,6 @@ export default function UserProfile() {
 
   return <main className="dashboard-shell profile-reference">
     <Sidebar />
-    <section className="main-area profile-area">
-      <Navbar title="User Profile" />
-      <div className="profile-content">
-        <div className="profile-grid">
-      <ProfileForm profile={draft} onChange={setDraft} onSubmit={() => { const user = getProfileUser(); saveStoredUser({ ...user, firstName: draft.firstName, lastName: draft.lastName, email: draft.email }) }} />
-        </div>
-      </div>
       <button className="settings" aria-label="Profile settings"><Settings /></button>
       <button className="edit-button" aria-label="Edit profile"><Pencil /></button>
     </section>

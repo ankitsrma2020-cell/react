@@ -3,18 +3,9 @@ import { useEffect, useMemo, useState } from 'react'
 import { Navbar } from '../components/dashboard/Navbar'
 import { Sidebar } from '../components/dashboard/Sidebar'
 
-type OrderStatus = 'Completed' | 'Processing' | 'Cancelled'
-type PaymentStatus = 'Paid' | 'Pending' | 'Failed'
-type Order = { id: string; customer: string; initials: string; date: string; time: string; status: OrderStatus; total: string; payment: PaymentStatus; tone: string }
-
 const customers = [['John Doe', 'JD'], ['Sarah Miller', 'SM'], ['Robert Johnson', 'RJ'], ['Emma Wilson', 'EM'], ['David Lee', 'DL'], ['Alice Brown', 'AL'], ['Michael King', 'MK'], ['Daniel White', 'DW'], ['Charlotte Martin', 'CM'], ['Henry Lee', 'HL'], ['Amelia Clark', 'AC'], ['Alexander Lewis', 'AL'], ['Mia Thompson', 'MT'], ['Sebastian Young', 'SY'], ['Olivia Harris', 'OH'], ['James Walker', 'JW'], ['Sophia Hall', 'SH'], ['Ethan Scott', 'ES'], ['Isabella Moore', 'IM'], ['Lucas Allen', 'LA'], ['Grace King', 'GK'], ['Noah Wright', 'NW'], ['Ava Green', 'AG'], ['Benjamin Cole', 'BC'], ['Lily Adams', 'LA'], ['William Ross', 'WR'], ['Chloe Baker', 'CB'], ['Leo Turner', 'LT']] as const
 const statuses: OrderStatus[] = ['Completed', 'Processing', 'Completed', 'Cancelled', 'Processing', 'Completed', 'Processing']
-const payments: PaymentStatus[] = ['Paid', 'Pending', 'Paid', 'Failed', 'Pending', 'Paid', 'Pending']
-const tones = ['violet', 'blue', 'green', 'purple', 'orange', 'teal', 'pink']
-const totals = ['$1,299.00', '$799.00', '$2,199.00', '$499.00', '$1,699.00', '$899.00', '$1,099.00']
-const orderTimes = ['10:30 AM', '09:15 AM', '04:45 PM', '02:20 PM', '11:05 AM', '06:10 PM', '01:45 PM']
-const orders: Order[] = customers.map(([customer, initials], index) => ({ id: `#ORD-${String(index + 1).padStart(4, '0')}`, customer, initials, date: `May ${10 - Math.floor(index / 4)}, 2025`, time: orderTimes[index % 7], status: statuses[index % 7], total: totals[index % 7], payment: payments[index % 7], tone: tones[index % 7] }))
-const tabs: Array<'All Orders' | OrderStatus> = ['All Orders', 'Completed', 'Processing', 'Cancelled']
+conay<'All Orders' | OrderStatus> = ['All Orders', 'Completed', 'Processing', 'Cancelled']
 
 export default function Typography() {
   const [tab, setTab] = useState<(typeof tabs)[number]>('All Orders')
